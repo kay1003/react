@@ -1,5 +1,5 @@
 ## 简介
-Sword 是 SpringBlade前端UI项目，基于react 、ant design、dva，用于快速构建系统中后台业务。
+Sword 是 [SpringBlade](https://gitee.com/smallc/SpringBlade) 前端UI项目，基于react 、ant design、dva，用于快速构建系统中后台业务。
 
 ## 特性
 
