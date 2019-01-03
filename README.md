@@ -1,5 +1,5 @@
 ## 简介
-Sword 是 [SpringBlade](https://gitee.com/smallc/SpringBlade) 前端UI项目，基于react 、ant design、dva，用于快速构建系统中后台业务。
+Sword 是 SpringBlade前端UI项目，基于react 、ant design、dva，用于快速构建系统中后台业务。
 
 ## 特性
 
@@ -9,7 +9,7 @@ Sword 是 [SpringBlade](https://gitee.com/smallc/SpringBlade) 前端UI项目，�
 - :iphone: **响应式**：针对不同屏幕大小设计
 - :art: **主题**：可配置的主题满足多样化的品牌诉求
 - :globe_with_meridians: **国际化**：内建业界通用的国际化方案
-- :gear: **最佳实践**：良好的工程实践助您持续产出高质量代码
+- :zap: **最佳实践**：良好的工程实践助您持续产出高质量代码
 - :1234: **Mock 数据**：实用的本地数据调试方案
 - :white_check_mark: **UI 测试**：自动化测试保障前端产品质量
 
@@ -40,29 +40,50 @@ $ npm install
 # mock模式
 $ npm start  
 # 服务模式
-$ npm start:no-mock 
+$ npm run start:no-mock 
 # 访问 http://localhost:88       
 ```
 
 # 界面一览
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-k8s.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-traefik.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-traefik-health.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-harbor.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-consul.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-consul-nodes1.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-consul-nodes2.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-admin1.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-admin2.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-swagger1.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-swagger2.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-main.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-menu.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-menu-edit.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-menu-icon.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-role.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-user.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-dict.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-locale-cn.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-locale-us.png "业务系统")
-![业务系统](https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-log.png "业务系统")
+<table>
+    <tr>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-k8s.png"/></td>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-harbor.png"/></td>
+    </tr>
+    <tr>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-traefik.png"/></td>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-traefik-health.png"/></td>
+    </tr>
+    <tr>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-consul.png"/></td>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-consul-nodes1.png"/></td>
+    </tr>
+    <tr>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-admin1.png"/></td>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-admin2.png"/></td>
+    </tr>
+    <tr>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-swagger1.png"/></td>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/springblade-swagger2.png"/></td>
+    </tr>
+    <tr>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-main.png"/></td>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-menu.png"/></td>
+    </tr>
+    <tr>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-menu-edit.png"/></td>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-menu-icon.png"/></td>
+    </tr>
+    <tr>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-role.png"/></td>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-user.png"/></td>
+    </tr>
+    <tr>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-dict.png "/></td>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-log.png"/></td>
+    </tr>
+    <tr>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-locale-cn.png"/></td>
+        <td><img src="https://raw.githubusercontent.com/chillzhuang/blade-tool/master/pic/sword-locale-us.png"/></td>
+    </tr>
+</table>

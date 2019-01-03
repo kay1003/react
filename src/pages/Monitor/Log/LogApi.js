@@ -45,7 +45,7 @@ class LogApi extends PureComponent {
           <div style={{ float: 'right' }}>
             <Button type="primary" htmlType="submit">
               查询
-            </Button>
+            </Button>{' '}
             <Button style={{ marginLeft: 8 }} onClick={onReset}>
               重置
             </Button>
