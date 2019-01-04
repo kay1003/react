@@ -1,16 +1,16 @@
 import { connect } from 'dva';
 import { Card, Col, Icon, Row, Tabs } from 'antd';
 import React, { PureComponent } from 'react';
-import styles from '../../../../layouts/Sword.less';
+import styles from '../../layouts/Sword.less';
 import { iconData } from './IconData';
-import { MENU_SELECT_ICON } from '../../../../actions/menu';
+import { MENU_SELECT_ICON } from '../../actions/menu';
 
 const { TabPane } = Tabs;
 
 @connect(({ menu }) => ({
   menu,
 }))
-class IconCategory extends PureComponent {
+class Index extends PureComponent {
   handelClick = type => {
     const { onCancel, dispatch } = this.props;
     dispatch(MENU_SELECT_ICON(type.icon));
@@ -42,4 +42,4 @@ class IconCategory extends PureComponent {
     );
   }
 }
-export default IconCategory;
+export default Index;

@@ -17,7 +17,7 @@ import Panel from '../../../components/Panel';
 import styles from '../../../layouts/Sword.less';
 import { MENU_DETAIL, MENU_INIT, MENU_SUBMIT } from '../../../actions/menu';
 import func from '../../../utils/Func';
-import IconCategory from './IconPreview/IconCategory';
+import IconPreview from '../../../components/IconPreview';
 
 const FormItem = Form.Item;
 const { TextArea, Search } = Input;
@@ -306,7 +306,7 @@ class MenuEdit extends PureComponent {
           </Card>
         </Form>
         <Modal width={900} visible={visible} onCancel={this.handleCancel} footer={null}>
-          <IconCategory onCancel={this.handleCancel} />
+          <IconPreview onCancel={this.handleCancel} />
         </Modal>
       </Panel>
     );

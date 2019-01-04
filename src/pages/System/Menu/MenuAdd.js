@@ -17,7 +17,7 @@ import Panel from '../../../components/Panel';
 import styles from '../../../layouts/Sword.less';
 import func from '../../../utils/Func';
 import { MENU_INIT, MENU_SUBMIT, MENU_DETAIL, MENU_CLEAR_DETAIL } from '../../../actions/menu';
-import IconCategory from './IconPreview/IconCategory';
+import IconPreview from '../../../components/IconPreview';
 
 const FormItem = Form.Item;
 const { TextArea, Search } = Input;
@@ -288,7 +288,7 @@ class MenuAdd extends PureComponent {
           </Card>
         </Form>
         <Modal width={900} visible={visible} onCancel={this.handleCancel} footer={null}>
-          <IconCategory onCancel={this.handleCancel} />
+          <IconPreview onCancel={this.handleCancel} />
         </Modal>
       </Panel>
     );
