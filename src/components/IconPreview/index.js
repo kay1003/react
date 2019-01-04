@@ -10,7 +10,7 @@ const { TabPane } = Tabs;
 @connect(({ menu }) => ({
   menu,
 }))
-class Index extends PureComponent {
+class IconPreview extends PureComponent {
   handelClick = type => {
     const { onCancel, dispatch } = this.props;
     dispatch(MENU_SELECT_ICON(type.icon));
@@ -42,4 +42,4 @@ class Index extends PureComponent {
     );
   }
 }
-export default Index;
+export default IconPreview;
