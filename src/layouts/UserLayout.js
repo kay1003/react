@@ -69,7 +69,7 @@ class UserLayout extends React.PureComponent {
               </Link>
             </div>
             <div className={styles.desc}>
-              Sword是SpringBlade前端UI项目，基于react 、ant design、dva等流行技术栈。
+              Sword是SpringBlade前端UI项目，基于react 、ant design、umi、dva等流行技术栈。
             </div>
           </div>
           {children}
