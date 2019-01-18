@@ -1,7 +1,5 @@
 import React, { Suspense } from 'react';
-import { Layout, LocaleProvider } from 'antd';
-import ZH_CN from 'antd/lib/locale-provider/zh_CN';
-import moment from 'moment';
+import { Layout } from 'antd';
 import 'moment/locale/zh-cn';
 import DocumentTitle from 'react-document-title';
 import isEqual from 'lodash/isEqual';
@@ -21,9 +19,8 @@ import Exception403 from '../pages/Exception/403';
 import PageLoading from '@/components/PageLoading';
 import SiderMenu from '@/components/SiderMenu';
 
+import { menu, title } from '../defaultSettings';
 import styles from './BasicLayout.less';
-
-moment.locale('zh-cn');
 
 // lazy load SettingDrawer
 const SettingDrawer = React.lazy(() => import('@/components/SettingDrawer'));
@@ -104,7 +101,7 @@ class BasicLayout extends React.PureComponent {
   getRouterAuthority = (pathname, routeData) => {
     let routeAuthority = ['noAuthority'];
     const getAuthority = (key, routes) => {
-      routes.map(route => {
+      routes.forEach(route => {
         if (route.path && pathToRegexp(route.path).test(key)) {
           routeAuthority = route.authority;
         } else if (route.routes) {
@@ -121,14 +118,17 @@ class BasicLayout extends React.PureComponent {
     const currRouterData = this.matchParamsPath(pathname, breadcrumbNameMap);
 
     if (!currRouterData) {
-      return 'Sword企业级开发平台';
+      return title;
     }
-    const pageName = formatMessage({
-      id: currRouterData.locale || currRouterData.name,
-      defaultMessage: currRouterData.name,
-    });
 
-    return `${pageName} - Sword企业级开发平台`;
+    const pageName = menu.disableLocal
+      ? currRouterData.name
+      : formatMessage({
+          id: currRouterData.locale || currRouterData.name,
+          defaultMessage: currRouterData.name,
+        });
+
+    return `${pageName} - ${title}`;
   };
 
   getLayoutStyle = () => {
@@ -225,16 +225,14 @@ class BasicLayout extends React.PureComponent {
   }
 }
 
-export default connect(({ global, setting, menu }) => ({
+export default connect(({ global, setting, menu: menuModel }) => ({
   collapsed: global.collapsed,
   layout: setting.layout,
-  menuData: menu.menuData,
-  breadcrumbNameMap: menu.breadcrumbNameMap,
+  menuData: menuModel.menuData,
+  breadcrumbNameMap: menuModel.breadcrumbNameMap,
   ...setting,
 }))(props => (
-  <LocaleProvider locale={ZH_CN}>
-    <Media query="(max-width: 599px)">
-      {isMobile => <BasicLayout {...props} isMobile={isMobile} />}
-    </Media>
-  </LocaleProvider>
+  <Media query="(max-width: 599px)">
+    {isMobile => <BasicLayout {...props} isMobile={isMobile} />}
+  </Media>
 ));
