@@ -4,8 +4,8 @@ import request from '../utils/request';
 
 // =====================通知公告===========================
 
-export async function queryProjectNotice() {
-  return request('/api/blade-desk/notice/notices');
+export async function queryProjectNotice(params = {}) {
+  return request(`/api/blade-desk/notice/notices?${stringify(params)}`);
 }
 
 export async function list(params) {

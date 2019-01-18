@@ -4,6 +4,7 @@ import { message } from 'antd';
 import router from 'umi/router';
 import { formatMessage } from 'umi/locale';
 import Authorized from '../utils/Authorized';
+import { menu } from '../defaultSettings';
 import {
   dynamicRoutes,
   dynamicButtons,
@@ -171,7 +172,7 @@ const { check } = Authorized;
 function formatter(data, parentAuthority, parentName) {
   return data
     .map(item => {
-      if (!item.name) {
+      if (!item.name || !item.path) {
         return null;
       }
 
@@ -181,10 +182,14 @@ function formatter(data, parentAuthority, parentName) {
       } else {
         locale = `menu.${item.name}`;
       }
-
+      // if enableMenuLocale use item.name,
+      // close menu international
+      const name = menu.disableLocal
+        ? item.name
+        : formatMessage({ id: locale, defaultMessage: item.name });
       const result = {
         ...item,
-        name: formatMessage({ id: locale, defaultMessage: item.name }),
+        name,
         locale,
         authority: item.authority || parentAuthority,
       };
