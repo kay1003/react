@@ -1,4 +1,4 @@
-import { routesAuthority } from './services/role';
+import { routesAuthority } from './services/menu';
 
 export const dva = {
   config: {

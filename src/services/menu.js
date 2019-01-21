@@ -21,11 +21,11 @@ export async function tree(params) {
 }
 
 export async function grantTree(params) {
-  return request(`/api/blade-system/menu/grantTree?${stringify(params)}`);
+  return request(`/api/blade-system/menu/grant-tree?${stringify(params)}`);
 }
 
 export async function roleTreeKeys(params) {
-  return request(`/api/blade-system/menu/roleTreeKeys?${stringify(params)}`);
+  return request(`/api/blade-system/menu/role-tree-keys?${stringify(params)}`);
 }
 
 export async function remove(params) {
@@ -44,4 +44,8 @@ export async function submit(params) {
 
 export async function detail(params) {
   return request(`/api/blade-system/menu/detail?${stringify(params)}`);
+}
+
+export async function routesAuthority() {
+  return request('/api/blade-system/menu/auth-routes');
 }
