@@ -70,6 +70,16 @@ class CodeAdd extends PureComponent {
                 ],
               })(<Input placeholder="请输入表名" />)}
             </FormItem>
+            <FormItem {...formItemLayout} label="表前缀名">
+              {getFieldDecorator('modelName', {
+                rules: [
+                  {
+                    required: true,
+                    message: '请输入表前缀名',
+                  },
+                ],
+              })(<Input placeholder="请输入表前缀名" />)}
+            </FormItem>
             <FormItem {...formItemLayout} label="主键名">
               {getFieldDecorator('pkName', {
                 rules: [
@@ -79,16 +89,6 @@ class CodeAdd extends PureComponent {
                   },
                 ],
               })(<Input placeholder="请输入主键名" />)}
-            </FormItem>
-            <FormItem {...formItemLayout} label="实体名">
-              {getFieldDecorator('modelName', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入实体名',
-                  },
-                ],
-              })(<Input placeholder="请输入实体名" />)}
             </FormItem>
             <FormItem {...formItemLayout} label="包名">
               {getFieldDecorator('packageName', {

@@ -65,11 +65,11 @@ class ParamView extends PureComponent {
             <FormItem {...formItemLayout} label="表名">
               <span>{detail.tableName}</span>
             </FormItem>
+            <FormItem {...formItemLayout} label="表前缀名">
+              <span>{detail.modelName}</span>
+            </FormItem>
             <FormItem {...formItemLayout} label="主键名">
               <span>{detail.pkName}</span>
-            </FormItem>
-            <FormItem {...formItemLayout} label="实体名">
-              <span>{detail.modelName}</span>
             </FormItem>
             <FormItem {...formItemLayout} label="包名">
               <span>{detail.packageName}</span>

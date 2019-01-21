@@ -95,6 +95,17 @@ class ParamAdd extends PureComponent {
                 initialValue: detail.tableName,
               })(<Input placeholder="请输入表名" />)}
             </FormItem>
+            <FormItem {...formItemLayout} label="表前缀名">
+              {getFieldDecorator('modelName', {
+                rules: [
+                  {
+                    required: true,
+                    message: '请输入表前缀名',
+                  },
+                ],
+                initialValue: detail.modelName,
+              })(<Input placeholder="请输入表前缀名" />)}
+            </FormItem>
             <FormItem {...formItemLayout} label="主键名">
               {getFieldDecorator('pkName', {
                 rules: [
@@ -105,17 +116,6 @@ class ParamAdd extends PureComponent {
                 ],
                 initialValue: detail.pkName,
               })(<Input placeholder="请输入主键名" />)}
-            </FormItem>
-            <FormItem {...formItemLayout} label="实体名">
-              {getFieldDecorator('modelName', {
-                rules: [
-                  {
-                    required: true,
-                    message: '请输入实体名',
-                  },
-                ],
-                initialValue: detail.modelName,
-              })(<Input placeholder="请输入实体名" />)}
             </FormItem>
             <FormItem {...formItemLayout} label="包名">
               {getFieldDecorator('packageName', {

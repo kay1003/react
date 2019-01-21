@@ -8,7 +8,7 @@ function getFakeList(req, res) {
     codeName: '通知公告',
     tableName: 'blade_notice',
     pkName: 'id',
-    modelName: 'Notice',
+    modelName: 'blade_',
     packageName: 'org.springblade.desk',
   });
   json.data = {
@@ -29,7 +29,7 @@ function getFakeDetail(req, res) {
     codeName: '通知公告',
     tableName: 'blade_notice',
     pkName: 'id',
-    modelName: 'Notice',
+    modelName: 'blade_',
     packageName: 'org.springblade.desk',
     apiPath: 'D:\\Workspaces\\java\\SpringBlade\\blade-service\\blade-desk',
     webPath: 'D:\\Workspaces\\web\\Sword',
