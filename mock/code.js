@@ -44,10 +44,10 @@ function fakeSuccess(req, res) {
 }
 
 const proxy = {
-  'GET /api/blade-system/code/list': getFakeList,
-  'GET /api/blade-system/code/detail': getFakeDetail,
-  'POST /api/blade-system/code/submit': fakeSuccess,
-  'POST /api/blade-system/code/remove': fakeSuccess,
-  'POST /api/blade-system/code/gen-code': fakeSuccess,
+  'GET /api/blade-develop/code/list': getFakeList,
+  'GET /api/blade-develop/code/detail': getFakeDetail,
+  'POST /api/blade-develop/code/submit': fakeSuccess,
+  'POST /api/blade-develop/code/remove': fakeSuccess,
+  'POST /api/blade-develop/code/gen-code': fakeSuccess,
 };
 export default delay(proxy, 500);
