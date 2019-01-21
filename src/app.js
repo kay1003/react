@@ -8,7 +8,9 @@ export const dva = {
   },
 };
 
-let authRoutes = {};
+let authRoutes = {
+  '/form/advanced-form': { authority: ['admin', 'user'] },
+};
 
 function ergodicRoutes(routes, authKey, authority) {
   routes.forEach(element => {
@@ -34,7 +36,9 @@ export function render(oldRender) {
     .then(res => res.json())
     .then(
       ret => {
-        authRoutes = ret;
+        if (ret.code === 200) {
+          authRoutes = ret.data;
+        }
         oldRender();
       },
       () => {
