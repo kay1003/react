@@ -48,5 +48,6 @@ const proxy = {
   'GET /api/blade-system/code/detail': getFakeDetail,
   'POST /api/blade-system/code/submit': fakeSuccess,
   'POST /api/blade-system/code/remove': fakeSuccess,
+  'POST /api/blade-system/code/gen-code': fakeSuccess,
 };
 export default delay(proxy, 500);

@@ -25,9 +25,8 @@ export default class Func {
       (typeof val === 'string' && val === '' && val !== 'undefined')
     ) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
 
   /**
@@ -39,10 +38,9 @@ export default class Func {
   static toInt(val, defaultValue) {
     if (this.isEmpty(val)) {
       return defaultValue === undefined ? -1 : defaultValue;
-    } else {
-      const num = parseInt(val, 0);
-      return Number.isNaN(num) ? (defaultValue === undefined ? -1 : defaultValue) : num;
     }
+    const num = parseInt(val, 0);
+    return Number.isNaN(num) ? (defaultValue === undefined ? -1 : defaultValue) : num;
   }
 
   /**
@@ -52,9 +50,9 @@ export default class Func {
    */
   static toFormData(obj) {
     const data = new FormData();
-    for (const key of Object.keys(obj)) {
+    Object.keys(obj).forEach(key => {
       data.append(key, Array.isArray(obj[key]) ? obj[key].join(',') : obj[key]);
-    }
+    });
     return data;
   }
 

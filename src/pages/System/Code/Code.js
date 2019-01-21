@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'dva';
-import { Button, Col, Form, Input, Row } from 'antd';
+import { Button, Col, Form, Input, message, Modal, Row } from 'antd';
 import Panel from '../../../components/Panel';
 import Grid from '../../../components/Sword/Grid';
 import { CODE_LIST } from '../../../actions/code';
+import { genCodes } from '../../../services/code';
 
 const FormItem = Form.Item;
 
@@ -13,10 +14,50 @@ const FormItem = Form.Item;
 }))
 @Form.create()
 class Code extends PureComponent {
+  state = {
+    selectedRows: [],
+  };
+
   // ============ 查询 ===============
   handleSearch = params => {
     const { dispatch } = this.props;
     dispatch(CODE_LIST(params));
+  };
+
+  onSelectRow = rows => {
+    this.setState({
+      selectedRows: rows,
+    });
+  };
+
+  getSelectKeys = () => {
+    const { selectedRows } = this.state;
+    return selectedRows.map(row => row.id);
+  };
+
+  // ============ 代码生成 ===============
+  genCode = () => {
+    const keys = this.getSelectKeys();
+    if (keys.length === 0) {
+      message.warn('请先选择一条数据!');
+      return;
+    }
+    Modal.confirm({
+      title: '代码生成确认',
+      content: '是否生成选中模块的代码?',
+      okText: '确定',
+      okType: 'danger',
+      cancelText: '取消',
+      async onOk() {
+        const response = await genCodes({ ids: keys });
+        if (response.success) {
+          message.success(response.msg);
+        } else {
+          message.error(response.msg || '生成失败');
+        }
+      },
+      onCancel() {},
+    });
   };
 
   // ============ 查询表单 ===============
@@ -55,6 +96,12 @@ class Code extends PureComponent {
     );
   };
 
+  renderLeftButton = () => (
+    <Button icon="tool" onClick={this.genCode}>
+      代码生成
+    </Button>
+  );
+
   render() {
     const code = 'code';
 
@@ -92,8 +139,10 @@ class Code extends PureComponent {
         <Grid
           code={code}
           form={form}
+          onSelectRow={this.onSelectRow}
           onSearch={this.handleSearch}
           renderSearchForm={this.renderSearchForm}
+          renderLeftButton={this.renderLeftButton}
           loading={loading}
           data={data}
           columns={columns}

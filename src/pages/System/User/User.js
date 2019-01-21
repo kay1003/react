@@ -35,9 +35,7 @@ class User extends PureComponent {
 
   getSelectKeys = () => {
     const { selectedRows } = this.state;
-    return selectedRows.map(row => {
-      return row.id;
-    });
+    return selectedRows.map(row => row.id);
   };
 
   // ============ 查询 ===============
@@ -55,7 +53,7 @@ class User extends PureComponent {
         return;
       }
       this.showModal();
-      return false;
+      return;
     }
     if (btn.code === 'user_reset') {
       if (keys.length === 0) {
@@ -78,7 +76,6 @@ class User extends PureComponent {
         },
         onCancel() {},
       });
-      return false;
     }
   };
 

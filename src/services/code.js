@@ -25,3 +25,10 @@ export async function submit(params) {
 export async function detail(params) {
   return request(`/api/blade-system/code/detail?${stringify(params)}`);
 }
+
+export async function genCodes(params) {
+  return request('/api/blade-system/code/gen-code', {
+    method: 'POST',
+    body: params,
+  });
+}

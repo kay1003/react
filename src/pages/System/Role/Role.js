@@ -40,9 +40,7 @@ class Role extends PureComponent {
 
   getSelectKeys = () => {
     const { selectedRows } = this.state;
-    return selectedRows.map(row => {
-      return row.id;
-    });
+    return selectedRows.map(row => row.id);
   };
 
   // ============ 查询 ===============
@@ -79,6 +77,7 @@ class Role extends PureComponent {
         dispatch(MENU_REFRESH_DATA());
       })
     );
+    return true;
   };
 
   showModal = () => {
@@ -142,7 +141,11 @@ class Role extends PureComponent {
     );
   };
 
-  renderLeftButton = () => <Button onClick={this.showModal}>权限设置</Button>;
+  renderLeftButton = () => (
+    <Button icon="user-add" onClick={this.showModal}>
+      权限设置
+    </Button>
+  );
 
   renderTreeNodes = data =>
     data.map(item => {
