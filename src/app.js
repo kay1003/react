@@ -1,4 +1,4 @@
-import fetch from 'dva/fetch';
+import { routesAuthority } from './services/role';
 
 export const dva = {
   config: {
@@ -32,17 +32,10 @@ export function patchRoutes(routes) {
 }
 
 export function render(oldRender) {
-  fetch('/api/auth_routes')
-    .then(res => res.json())
-    .then(
-      ret => {
-        if (ret.code === 200) {
-          authRoutes = ret.data;
-        }
-        oldRender();
-      },
-      () => {
-        oldRender();
-      }
-    );
+  routesAuthority().then(response => {
+    if (response) {
+      authRoutes = response.data;
+    }
+    oldRender();
+  });
 }

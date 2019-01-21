@@ -83,6 +83,14 @@ function getFakeTree(req, res) {
   return res.json(json);
 }
 
+function getFakeRoutes(req, res) {
+  const json = { code: 200, success: true, msg: '操作成功' };
+  json.data = {
+    '/form/advanced-form': { authority: ['admin', 'user'] },
+  };
+  return res.json(json);
+}
+
 function fakeSuccess(req, res) {
   const json = { code: 200, success: true, msg: '操作成功' };
   return res.json(json);
@@ -92,6 +100,7 @@ const proxy = {
   'GET /api/blade-system/role/list': getFakeList,
   'GET /api/blade-system/role/detail': getFakeDetail,
   'GET /api/blade-system/role/tree': getFakeTree,
+  'GET /api/blade-system/role/auth-routes': getFakeRoutes,
   'POST /api/blade-system/role/submit': fakeSuccess,
   'POST /api/blade-system/role/remove': fakeSuccess,
   'POST /api/blade-system/role/grant': fakeSuccess,
