@@ -31,8 +31,8 @@ function getFakeDetail(req, res) {
     pkName: 'id',
     modelName: 'blade_',
     packageName: 'org.springblade.desk',
-    apiPath: 'D:\\Workspaces\\java\\SpringBlade\\blade-service\\blade-desk',
-    webPath: 'D:\\Workspaces\\web\\Sword',
+    apiPath: 'D:\\Develop\\WorkSpace\\Git\\SpringBlade\\blade-ops\\blade-develop',
+    webPath: 'D:\\Develop\\WorkSpace\\Git\\Sword\\src\\pages',
   };
   json.data = detail;
   return res.json(json);
