@@ -29,6 +29,6 @@ export async function detail(params) {
 export async function genCodes(params) {
   return request('/api/blade-develop/code/gen-code', {
     method: 'POST',
-    body: params,
+    body: func.toFormData(params),
   });
 }
