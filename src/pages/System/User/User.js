@@ -4,7 +4,7 @@ import { Button, Col, Form, Input, message, Modal, Row, Tree } from 'antd';
 import Panel from '../../../components/Panel';
 import Grid from '../../../components/Sword/Grid';
 import { USER_INIT, USER_LIST, USER_ROLE_GRANT } from '../../../actions/user';
-import { requestApi } from '../../../services/api';
+import { resetPassword } from '../../../services/user';
 
 const FormItem = Form.Item;
 const { TreeNode } = Tree;
@@ -67,7 +67,7 @@ class User extends PureComponent {
         okType: 'danger',
         cancelText: '取消',
         async onOk() {
-          const response = await requestApi(btn.path, { userIds: keys });
+          const response = await resetPassword({ userIds: keys });
           if (response.success) {
             message.success(response.msg);
           } else {
