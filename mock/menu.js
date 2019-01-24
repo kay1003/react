@@ -430,7 +430,7 @@ function getFakeButtons(req, res) {
             alias: 'add',
           },
           {
-            code: 'param_edit',
+            code: 'code_edit',
             name: '修改',
             path: '/tool/code/edit',
             source: 'form',
@@ -438,7 +438,7 @@ function getFakeButtons(req, res) {
             alias: 'edit',
           },
           {
-            code: 'param_delete',
+            code: 'code_delete',
             name: '删除',
             path: '/api/blade-develop/code/remove',
             source: 'delete',
@@ -446,7 +446,7 @@ function getFakeButtons(req, res) {
             alias: 'delete',
           },
           {
-            code: 'param_view',
+            code: 'code_view',
             name: '查看',
             path: '/tool/code/view',
             source: 'file-text',
