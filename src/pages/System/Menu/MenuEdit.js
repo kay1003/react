@@ -156,12 +156,6 @@ class MenuEdit extends PureComponent {
               <Col span={10}>
                 <FormItem {...formItemLayout} label="上级菜单">
                   {getFieldDecorator('parentId', {
-                    rules: [
-                      {
-                        required: true,
-                        message: '请选择上级菜单',
-                      },
-                    ],
                     initialValue: detail.parentId,
                   })(
                     <TreeSelect
