@@ -12,7 +12,7 @@ const FormItem = Form.Item;
   code,
 }))
 @Form.create()
-class ParamView extends PureComponent {
+class CodeView extends PureComponent {
   componentWillMount() {
     const {
       dispatch,
@@ -89,4 +89,4 @@ class ParamView extends PureComponent {
     );
   }
 }
-export default ParamView;
+export default CodeView;

@@ -12,7 +12,7 @@ const FormItem = Form.Item;
   submitting: loading.effects['code/submit'],
 }))
 @Form.create()
-class ParamAdd extends PureComponent {
+class CodeEdit extends PureComponent {
   componentWillMount() {
     const {
       dispatch,
@@ -168,4 +168,4 @@ class ParamAdd extends PureComponent {
   }
 }
 
-export default ParamAdd;
+export default CodeEdit;
