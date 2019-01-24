@@ -10,9 +10,7 @@ export default class ToolBar extends PureComponent {
       <div className={styles.operator}>
         <div>
           {buttons
-            .filter(button => {
-              return button.action === 1 || button.action === 3;
-            })
+            .filter(button => button.action === 1 || button.action === 3)
             .map(button => (
               <Button
                 key={button.code}
