@@ -79,7 +79,7 @@ class Code extends PureComponent {
         </Col>
         <Col md={6} sm={24}>
           <FormItem label="表前缀名">
-            {getFieldDecorator('modelName')(<Input placeholder="请输入表前缀名" />)}
+            {getFieldDecorator('tablePrefix')(<Input placeholder="请输入表前缀名" />)}
           </FormItem>
         </Col>
         <Col>
@@ -117,12 +117,16 @@ class Code extends PureComponent {
         dataIndex: 'codeName',
       },
       {
+        title: '服务名',
+        dataIndex: 'serviceName',
+      },
+      {
         title: '表名',
         dataIndex: 'tableName',
       },
       {
-        title: '表前缀名',
-        dataIndex: 'modelName',
+        title: '表前缀',
+        dataIndex: 'tablePrefix',
       },
       {
         title: '主键名',

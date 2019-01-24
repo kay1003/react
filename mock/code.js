@@ -5,10 +5,10 @@ function getFakeList(req, res) {
   const list = [];
   list.push({
     id: '1',
+    serviceName: 'blade-demo',
     codeName: '通知公告',
     tableName: 'blade_notice',
     pkName: 'id',
-    modelName: 'blade_',
     packageName: 'org.springblade.desk',
   });
   json.data = {
@@ -26,10 +26,11 @@ function getFakeDetail(req, res) {
   const json = { code: 200, success: true, msg: '操作成功' };
   const detail = {
     id: '1',
+    serviceName: 'blade-demo',
     codeName: '通知公告',
     tableName: 'blade_notice',
     pkName: 'id',
-    modelName: 'blade_',
+    tablePrefix: 'blade_',
     packageName: 'org.springblade.desk',
     apiPath: 'D:\\Develop\\WorkSpace\\Git\\SpringBlade\\blade-ops\\blade-develop',
     webPath: 'D:\\Develop\\WorkSpace\\Git\\Sword',

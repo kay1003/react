@@ -91,6 +91,6 @@ export default class Func {
    * @returns {string}
    */
   static split(str) {
-    return str ? str.split(',') : '';
+    return str ? String(str).split(',') : '';
   }
 }
