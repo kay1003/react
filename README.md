@@ -1,6 +1,9 @@
 ## 简介
 Sword 是 [SpringBlade](https://gitee.com/smallc/SpringBlade)前端UI项目，基于react 、ant design、dva，用于快速构建系统中后台业务。
 
+## 在线演示
+演示地址：[http://sword.bladex.vip](http://sword.bladex.vip)
+
 ## 特性
 
 - :gem: **优雅美观**：基于 Ant Design 体系精心设计

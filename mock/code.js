@@ -8,6 +8,7 @@ function getFakeList(req, res) {
     serviceName: 'blade-demo',
     codeName: '通知公告',
     tableName: 'blade_notice',
+    tablePrefix: 'blade_',
     pkName: 'id',
     packageName: 'org.springblade.desk',
   });
