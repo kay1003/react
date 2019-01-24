@@ -100,9 +100,8 @@ export default class Grid extends PureComponent {
       const selectKey = row[pkField] || row[childPkField];
       if (`${selectKey}`.indexOf(',') > 0) {
         return `${selectKey}`.split(',');
-      } else {
-        return selectKey;
       }
+      return selectKey;
     });
   };
 
@@ -199,9 +198,7 @@ export default class Grid extends PureComponent {
     } = this.props;
     let { columns } = this.props;
 
-    const actionButtons = buttons.filter(button => {
-      return button.action === 2 || button.action === 3;
-    });
+    const actionButtons = buttons.filter(button => button.action === 2 || button.action === 3);
 
     if (columns && Array.isArray(columns) && actionButtons.length > 0) {
       const key = pkField || rowKey || 'id';
@@ -210,23 +207,21 @@ export default class Grid extends PureComponent {
         {
           title: formatMessage({ id: 'table.columns.action' }),
           width: actionColumnWidth || 200,
-          render: (text, record) => {
-            return (
-              <Fragment>
-                {actionButtons.map((button, index) => (
-                  <Fragment key={button.code}>
-                    {index > 0 ? <Divider type="vertical" /> : null}
-                    <a
-                      title={formatMessage({ id: `button.${button.alias}.name` })}
-                      onClick={() => this.handelClick(button, [record[childPkField || key]])}
-                    >
-                      <FormattedMessage id={`button.${button.alias}.name`} />
-                    </a>
-                  </Fragment>
-                ))}
-              </Fragment>
-            );
-          },
+          render: (text, record) => (
+            <Fragment>
+              {actionButtons.map((button, index) => (
+                <Fragment key={button.code}>
+                  {index > 0 ? <Divider type="vertical" /> : null}
+                  <a
+                    title={formatMessage({ id: `button.${button.alias}.name` })}
+                    onClick={() => this.handelClick(button, [record[childPkField || key]])}
+                  >
+                    <FormattedMessage id={`button.${button.alias}.name`} />
+                  </a>
+                </Fragment>
+              ))}
+            </Fragment>
+          ),
         },
       ];
     }
