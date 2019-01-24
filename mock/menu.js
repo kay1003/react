@@ -440,7 +440,7 @@ function getFakeButtons(req, res) {
           {
             code: 'param_delete',
             name: '删除',
-            path: '/api/blade-system/code/remove',
+            path: '/api/blade-develop/code/remove',
             source: 'delete',
             action: 3,
             alias: 'delete',
