@@ -154,10 +154,10 @@ const proxy = {
         accessToken:
           'eyJ0eXAiOiJKc29uV2ViVG9rZW4iLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJpc3N1c2VyIiwiYXVkIjoiYXVkaWVuY2UiLCJyb2xlSWQiOiIxIiwicm9sZU5hbWUiOiJhZG1pbiIsInVzZXJOYW1lIjoi566h55CG5ZGYIiwidXNlcklkIjoiMSIsImFjY291bnQiOiJhZG1pbiIsImV4cCI6MTU0NDEyMjc5OSwibmJmIjoxNTQ0MDkxOTE3fQ.STze1uvHEoDI-FAAoFaOXufML_75MY6A_r6ZIzdYzYk',
         tokenType: 'bearer',
-        authority: 'user',
+        authority: 'admin',
         avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
-        userName: '用户',
-        account: 'user',
+        userName: '管理员',
+        account: 'admin',
         license: 'made by blade',
       },
       msg: '操作成功',

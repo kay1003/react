@@ -36,10 +36,9 @@ class NoticeAdd extends PureComponent {
     });
   };
 
-  disabledDate = current => {
+  disabledDate = current =>
     // Can not select days before today
-    return current && current < moment().endOf('day');
-  };
+    current && current < moment().endOf('day');
 
   render() {
     const {
