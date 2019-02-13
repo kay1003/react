@@ -177,7 +177,7 @@ class Workplace extends PureComponent {
                         <span>
                           <a className={styles.username}>SpringBlade 企业版系列 </a>
                           <span className={styles.event}>
-                            已通过长时间生产环境的考验，现将其拆分出基础模块进行开源，当前版本为：2.0.0-RC3。
+                            已通过长时间生产环境的考验，现将其拆分出基础模块进行开源，当前版本为：2.0.0。
                           </span>
                         </span>
                       }

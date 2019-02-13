@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { formatMessage } from 'umi/locale';
 import { Layout, message, Modal } from 'antd';
 import Animate from 'rc-animate';
@@ -10,7 +10,7 @@ import styles from './Header.less';
 
 const { Header } = Layout;
 
-class HeaderView extends PureComponent {
+class HeaderView extends React.Component {
   state = {
     visible: true,
   };

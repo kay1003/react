@@ -52,7 +52,7 @@ const query = {
   },
 };
 
-class BasicLayout extends React.PureComponent {
+class BasicLayout extends React.Component {
   constructor(props) {
     super(props);
     this.getPageTitle = memoizeOne(this.getPageTitle);
@@ -76,15 +76,6 @@ class BasicLayout extends React.PureComponent {
     });
   }
 
-  componentDidUpdate(preProps) {
-    // After changing to phone mode,
-    // if collapsed is true, you need to click twice to display
-    const { collapsed, isMobile } = this.props;
-    if (isMobile && !preProps.isMobile && !collapsed) {
-      this.handleMenuCollapse(false);
-    }
-  }
-
   getContext() {
     const { location, breadcrumbNameMap } = this.props;
     return {
@@ -98,20 +89,28 @@ class BasicLayout extends React.PureComponent {
     return breadcrumbNameMap[pathKey];
   };
 
-  getRouterAuthority = (pathname, routeData) => {
-    let routeAuthority = ['noAuthority'];
-    const getAuthority = (key, routes) => {
-      routes.forEach(route => {
-        if (route.path && pathToRegexp(route.path).test(key)) {
-          routeAuthority = route.authority;
-        } else if (route.routes) {
-          routeAuthority = getAuthority(key, route.routes);
+  getRouteAuthority = (pathname, routeData) => {
+    const routes = routeData.slice(); // clone
+    let authorities;
+
+    while (routes.length > 0) {
+      const route = routes.shift();
+      // check partial route
+      if (pathToRegexp(`${route.path}(.*)`).test(pathname)) {
+        if (route.authority) {
+          authorities = route.authority;
         }
-        return route;
-      });
-      return routeAuthority;
-    };
-    return getAuthority(pathname, routeData);
+        // is exact route?
+        if (pathToRegexp(route.path).test(pathname)) {
+          break;
+        }
+
+        if (route.routes) {
+          route.routes.forEach(r => routes.push(r));
+        }
+      }
+    }
+    return authorities;
   };
 
   getPageTitle = (pathname, breadcrumbNameMap) => {
@@ -172,7 +171,7 @@ class BasicLayout extends React.PureComponent {
     } = this.props;
 
     const isTop = PropsLayout === 'topmenu';
-    const routerConfig = this.getRouterAuthority(pathname, routes);
+    const routerConfig = this.getRouteAuthority(pathname, routes);
     const contentStyle = !fixedHeader ? { paddingTop: 0 } : {};
     const layout = (
       <Layout>
