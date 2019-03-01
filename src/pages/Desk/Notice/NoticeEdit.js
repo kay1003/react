@@ -113,7 +113,7 @@ class NoticeAdd extends PureComponent {
               )}
             </FormItem>
             <FormItem {...formItemLayout} label={<FormattedMessage id="desk.notice.date" />}>
-              {getFieldDecorator('date', {
+              {getFieldDecorator('releaseTime', {
                 rules: [
                   {
                     required: true,
