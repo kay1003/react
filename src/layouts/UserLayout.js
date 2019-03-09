@@ -54,7 +54,9 @@ const UserLayout = ({ children }) => (
             <span className={styles.title}>Sword 企业级开发平台</span>
           </Link>
         </div>
-        <div className={styles.desc}>Sword是SpringBlade前端UI项目，基于react 、ant design、umi、dva等流行技术栈。</div>
+        <div className={styles.desc}>
+          Sword是SpringBlade前端UI项目，基于react 、ant design、umi、dva等流行技术栈。
+        </div>
       </div>
       {children}
     </div>

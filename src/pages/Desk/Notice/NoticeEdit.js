@@ -41,7 +41,7 @@ class NoticeAdd extends PureComponent {
       const params = {
         id,
         ...values,
-        date: func.format(values.date),
+        releaseTime: func.format(values.releaseTime),
       };
       dispatch(NOTICE_SUBMIT(params));
     });
