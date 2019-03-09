@@ -120,7 +120,7 @@ class NoticeAdd extends PureComponent {
                     message: formatMessage({ id: 'desk.notice.date.validation' }),
                   },
                 ],
-                initialValue: moment(detail.date, 'YYYY-MM-DD HH:mm:ss'),
+                initialValue: moment(detail.releaseTime, 'YYYY-MM-DD HH:mm:ss'),
               })(
                 <DatePicker
                   style={{ width: '100%' }}
