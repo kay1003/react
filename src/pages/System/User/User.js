@@ -206,10 +206,6 @@ class User extends PureComponent {
         title: '电子邮箱',
         dataIndex: 'email',
       },
-      {
-        title: '账号状态',
-        dataIndex: 'statusName',
-      },
     ];
 
     if (!tenantMode) {
