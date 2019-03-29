@@ -4,6 +4,7 @@ import { Button, Col, Form, Input, Row } from 'antd';
 import Panel from '../../../components/Panel';
 import Grid from '../../../components/Sword/Grid';
 import { DEPT_LIST } from '../../../actions/dept';
+import { tenantMode } from '../../../defaultSettings';
 
 const FormItem = Form.Item;
 
@@ -66,12 +67,12 @@ class Dept extends PureComponent {
 
     const columns = [
       {
-        title: '部门名称',
-        dataIndex: 'deptName',
-      },
-      {
         title: '租户编号',
         dataIndex: 'tenantCode',
+      },
+      {
+        title: '部门名称',
+        dataIndex: 'deptName',
       },
       {
         title: '部门全称',
@@ -82,6 +83,10 @@ class Dept extends PureComponent {
         dataIndex: 'sort',
       },
     ];
+
+    if (!tenantMode) {
+      columns.splice(0, 1);
+    }
 
     return (
       <Panel>

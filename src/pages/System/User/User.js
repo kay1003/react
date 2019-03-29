@@ -5,6 +5,7 @@ import Panel from '../../../components/Panel';
 import Grid from '../../../components/Sword/Grid';
 import { USER_INIT, USER_LIST, USER_ROLE_GRANT } from '../../../actions/user';
 import { resetPassword } from '../../../services/user';
+import { tenantMode } from '../../../defaultSettings';
 
 const FormItem = Form.Item;
 const { TreeNode } = Tree;
@@ -210,6 +211,10 @@ class User extends PureComponent {
         dataIndex: 'statusName',
       },
     ];
+
+    if (!tenantMode) {
+      columns.splice(0, 1);
+    }
 
     return (
       <Panel>

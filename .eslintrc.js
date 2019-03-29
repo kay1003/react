@@ -24,7 +24,7 @@ module.exports = {
       2,
       {
         optionalDependencies: true,
-        devDependencies: ['**/tests/**.js', '/mock/**.js', '**/**.test.js'],
+        devDependencies: ['**/tests/**.js', '/mock/**/**.js', '**/**.test.js'],
       },
     ],
     'jsx-a11y/no-noninteractive-element-interactions': 0,
@@ -33,8 +33,9 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': 0,
     'no-nested-ternary': 0,
     'linebreak-style': 0,
+    'camelcase': 1,
   },
   settings: {
-    polyfills: ['fetch', 'promises', 'url'],
+    polyfills: ['fetch', 'promises', 'url', 'object-assign'],
   },
 };

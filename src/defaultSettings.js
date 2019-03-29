@@ -1,4 +1,6 @@
 module.exports = {
+  title: 'Sword企业级开发平台',
+  tenantMode: true, // 开启租户模式
   navTheme: 'dark', // theme for nav menu
   primaryColor: '#1890FF', // primary color of ant design
   layout: 'sidemenu', // nav menu position: sidemenu or topmenu
@@ -10,6 +12,5 @@ module.exports = {
   menu: {
     disableLocal: false,
   },
-  title: 'Sword企业级开发平台',
   pwa: true,
 };
