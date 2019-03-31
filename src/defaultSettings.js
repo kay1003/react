@@ -1,5 +1,7 @@
 module.exports = {
   title: 'Sword企业级开发平台',
+  clientId: 'sword', // 客户端id
+  clientSecret: 'sword_secret', // 客户端密钥
   tenantMode: true, // 开启租户模式
   navTheme: 'dark', // theme for nav menu
   primaryColor: '#1890FF', // primary color of ant design
