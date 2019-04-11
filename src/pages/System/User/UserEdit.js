@@ -5,7 +5,7 @@ import { connect } from 'dva';
 import Panel from '../../../components/Panel';
 import func from '../../../utils/Func';
 import styles from '../../../layouts/Sword.less';
-import { USER_CHANGE_INIT, USER_DETAIL, USER_INIT, USER_SUBMIT } from '../../../actions/user';
+import { USER_CHANGE_INIT, USER_DETAIL, USER_INIT, USER_UPDATE } from '../../../actions/user';
 import { tenantMode } from '../../../defaultSettings';
 
 const FormItem = Form.Item;
@@ -45,7 +45,7 @@ class UserEdit extends PureComponent {
           deptId: func.join(values.deptId),
           birthday: func.format(values.birthday),
         };
-        dispatch(USER_SUBMIT(params));
+        dispatch(USER_UPDATE(params));
       }
     });
   };

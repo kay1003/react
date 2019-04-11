@@ -74,6 +74,7 @@ const proxy = {
   'POST /api/blade-user/grant': fakeSuccess,
   'POST /api/blade-user/reset-password': fakeSuccess,
   'POST /api/blade-user/submit': fakeSuccess,
+  'POST /api/blade-user/update': fakeSuccess,
   'POST /api/blade-user/remove': fakeSuccess,
 
   // 支持值为 Object 和 Array
