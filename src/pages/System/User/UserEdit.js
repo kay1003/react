@@ -53,7 +53,7 @@ class UserEdit extends PureComponent {
   handleChange = value => {
     const { dispatch, form } = this.props;
     form.resetFields(['roleId', 'deptId']);
-    dispatch(USER_CHANGE_INIT({ tenantCode: value }));
+    dispatch(USER_CHANGE_INIT({ tenantId: value }));
   };
 
   render() {
@@ -113,14 +113,14 @@ class UserEdit extends PureComponent {
               <Row gutter={24}>
                 <Col span={20}>
                   <FormItem {...formAllItemLayout} label="所属租户">
-                    {getFieldDecorator('tenantCode', {
+                    {getFieldDecorator('tenantId', {
                       rules: [
                         {
                           required: true,
                           message: '请选择所属租户',
                         },
                       ],
-                      initialValue: detail.tenantCode,
+                      initialValue: detail.tenantId,
                     })(
                       <Select
                         showSearch
@@ -132,7 +132,7 @@ class UserEdit extends PureComponent {
                         placeholder="请选择所属租户"
                       >
                         {tenantList.map(d => (
-                          <Select.Option key={d.tenantCode} value={d.tenantCode}>
+                          <Select.Option key={d.tenantId} value={d.tenantId}>
                             {d.tenantName}
                           </Select.Option>
                         ))}

@@ -6,7 +6,7 @@ import Login from '../../components/Login';
 import styles from './Login.less';
 import { tenantMode } from '../../defaultSettings';
 
-const { Tab, TenantCode, UserName, Password, Submit } = Login;
+const { Tab, TenantId, UserName, Password, Submit } = Login;
 
 @connect(({ login, loading }) => ({
   login,
@@ -82,13 +82,13 @@ class LoginPage extends Component {
               !submitting &&
               this.renderMessage(formatMessage({ id: 'app.login.message-invalid-credentials' }))}
             {tenantMode ? (
-              <TenantCode
-                name="tenantCode"
-                placeholder={`${formatMessage({ id: 'app.login.tenantCode' })}: 000000`}
+              <TenantId
+                name="tenantId"
+                placeholder={`${formatMessage({ id: 'app.login.tenantId' })}: 000000`}
                 rules={[
                   {
                     required: true,
-                    message: formatMessage({ id: 'validation.tenantCode.required' }),
+                    message: formatMessage({ id: 'validation.tenantId.required' }),
                   },
                 ]}
               />

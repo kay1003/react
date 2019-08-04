@@ -27,8 +27,8 @@ class Tenant extends PureComponent {
     return (
       <Row gutter={{ md: 8, lg: 24, xl: 48 }}>
         <Col md={6} sm={24}>
-          <FormItem label="租户编号">
-            {getFieldDecorator('tenantCode')(<Input placeholder="请输入租户编号" />)}
+          <FormItem label="租户ID">
+            {getFieldDecorator('tenantId')(<Input placeholder="请输入租户ID" />)}
           </FormItem>
         </Col>
         <Col md={6} sm={24}>
@@ -66,8 +66,8 @@ class Tenant extends PureComponent {
 
     const columns = [
       {
-        title: '租户编号',
-        dataIndex: 'tenantCode',
+        title: '租户ID',
+        dataIndex: 'tenantId',
       },
       {
         title: '租户名称',

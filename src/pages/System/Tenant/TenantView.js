@@ -59,8 +59,8 @@ class TenantView extends PureComponent {
       <Panel title="查看" back="/system/tenant" action={action}>
         <Form hideRequiredMark style={{ marginTop: 8 }}>
           <Card className={styles.card} bordered={false}>
-            <FormItem {...formItemLayout} label="租户编号">
-              <span>{detail.tenantCode}</span>
+            <FormItem {...formItemLayout} label="租户ID">
+              <span>{detail.tenantId}</span>
             </FormItem>
             <FormItem {...formItemLayout} label="租户名称">
               <span>{detail.tenantName}</span>
