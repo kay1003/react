@@ -1,7 +1,7 @@
  <p align="center">
   <img src="https://img.shields.io/badge/license-Apache%202-blue.svg" alt="Build Status">
-   <img src="https://img.shields.io/badge/Spring%20Cloud-Greenwich.SR1-blue.svg" alt="Coverage Status">
-   <img src="https://img.shields.io/badge/Spring%20Boot-2.1.5.RELEASE-blue.svg" alt="Downloads">
+   <img src="https://img.shields.io/badge/Spring%20Cloud-Greenwich.SR2-blue.svg" alt="Coverage Status">
+   <img src="https://img.shields.io/badge/Spring%20Boot-2.1.6.RELEASE-blue.svg" alt="Downloads">
  </p>  
 
 ## SpringBlade微服务开发平台
@@ -67,6 +67,19 @@ SpringBlade
 * 代码文件需保留相关license信息。
 * 禁止直接将本项目挂淘宝等商业平台出售。
 * 非界面代码50%以上相似度的二次开源，二次开源需先联系作者。
+
+## 如何启动
+```
+$ git clone https://gitee.com/smallc/Sword.git
+$ cd Sword
+$ yarn install 或者 npm install
+# mock模式
+$ yarn start 或者 npm start  
+# 服务模式
+$ yarn run start:no-mock 或者 npm run start:no-mock 
+# 访问 http://localhost:8888
+# 推荐使用yarn       
+```
 
 # 界面
 
