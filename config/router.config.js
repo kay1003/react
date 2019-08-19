@@ -226,6 +226,23 @@ export default [
               { path: '/tool/code/view/:id', component: './System/Code/CodeView' },
             ],
           },
+          {
+            path: '/tool/datasource',
+            routes: [
+              { path: '/tool/datasource', redirect: '/tool/datasource/list' },
+              { path: '/tool/datasource/list', component: './System/DataSource/DataSource' },
+              { path: '/tool/datasource/add', component: './System/DataSource/DataSourceAdd' },
+              { path: '/tool/datasource/add/:id', component: './System/DataSource/DataSourceAdd' },
+              {
+                path: '/tool/datasource/edit/:id',
+                component: './System/DataSource/DataSourceEdit',
+              },
+              {
+                path: '/tool/datasource/view/:id',
+                component: './System/DataSource/DataSourceView',
+              },
+            ],
+          },
         ],
       },
       {

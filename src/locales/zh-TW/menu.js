@@ -24,6 +24,7 @@ export default {
   'menu.monitor.doc': '接口文檔',
   'menu.tool': '研發工具',
   'menu.tool.code': '代碼生成',
+  'menu.tool.datasource': '數據源管理',
   'menu.result': '結果頁',
   'menu.result.success': '成功頁',
   'menu.result.fail': '失敗頁',

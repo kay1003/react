@@ -24,6 +24,7 @@ export default {
   'menu.monitor.doc': '接口文档',
   'menu.tool': '研发工具',
   'menu.tool.code': '代码生成',
+  'menu.tool.datasource': '数据源管理',
   'menu.result': '结果页',
   'menu.result.success': '成功页',
   'menu.result.fail': '失败页',

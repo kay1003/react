@@ -24,6 +24,7 @@ export default {
   'menu.monitor.doc': 'api doc',
   'menu.tool': 'develop',
   'menu.tool.code': 'code generate',
+  'menu.tool.datasource': 'datasource',
   'menu.result': 'Result',
   'menu.result.success': 'Success',
   'menu.result.fail': 'Fail',
