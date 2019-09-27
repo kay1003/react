@@ -60,7 +60,11 @@ SpringBlade
 * 核心框架项目地址：[https://github.com/chillzhuang/blade-tool](https://github.com/chillzhuang/blade-tool)
 
 ## 技术文档
-* [SpringBlade开发手册](https://gitee.com/smallc/SpringBlade/wikis/SpringBlade开发手册)
+* [Sword开发手册](https://www.kancloud.cn/smallchill/sword)
+* [SpringBlade开发手册](https://www.kancloud.cn/smallchill/blade)
+* [Saber开发手册](https://www.kancloud.cn/smallchill/saber)
+* [开发手册一览](https://gitee.com/smallc/SpringBlade/wikis/SpringBlade开发手册)
+* [SpringBlade常见问题集锦](https://sns.bladex.vip/article-14966.html)
 
 ## 用户权益
 * 允许免费用于学习、毕设、公司项目、私活等。
