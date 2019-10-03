@@ -110,7 +110,6 @@ class Workplace extends PureComponent {
                   <div>3.增加hystrix自动fallback功能</div>
                   <div>4.升级springboot至2.1.8.RELEASE</div>
                   <div>5.升级springcloud至Greenwich.SR3</div>
-                  <div>6.hikari变更为druid</div>
                 </Panel>
                 <Panel header="2.4.1发布 代码生成增加多数据源，强化代码生成功能" key="8">
                   <div>1.升级SpringBoot至2.1.7</div>
