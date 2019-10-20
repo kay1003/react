@@ -103,7 +103,14 @@ class Workplace extends PureComponent {
               </Collapse>
             </Col>
             <Col span={8}>
-              <Collapse bordered={false} defaultActiveKey={['10']}>
+              <Collapse bordered={false} defaultActiveKey={['11']}>
+                <Panel header="2.5.2发布 增加个人中心" key="11">
+                  <div>1.增加个人中心，支持用户信息自定义修改</div>
+                  <div>2.增加网关鉴权配置示例</div>
+                  <div>3.token的SIGN_KEY修改为一致</div>
+                  <div>4.admin模块增加对seata服务的过滤</div>
+                  <div>5.blade-tool增加部分工具类方法</div>
+                </Panel>
                 <Panel header="2.5.1发布 增加网关动态鉴权" key="10">
                   <div>1.增加网关动态鉴权</div>
                   <div>2.secure安全模块token校验默认关闭，交由网关处理</div>

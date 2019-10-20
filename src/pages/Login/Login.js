@@ -122,6 +122,7 @@ class LoginPage extends Component {
             {tenantMode ? (
               <TenantId
                 name="tenantId"
+                defaultValue="000000"
                 placeholder={`${formatMessage({ id: 'app.login.tenantId' })}: 000000`}
                 rules={[
                   {
@@ -133,6 +134,7 @@ class LoginPage extends Component {
             ) : null}
             <UserName
               name="account"
+              defaultValue="admin"
               placeholder={`${formatMessage({ id: 'app.login.userName' })}: admin`}
               rules={[
                 {
@@ -143,6 +145,7 @@ class LoginPage extends Component {
             />
             <Password
               name="password"
+              defaultValue="admin"
               placeholder={`${formatMessage({ id: 'app.login.password' })}: admin`}
               rules={[
                 {
