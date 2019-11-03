@@ -15,14 +15,14 @@ class Workplace extends PureComponent {
           <Row gutter={24}>
             <Col span={24}>
               <div style={{ textAlign: 'center' }}>
-                <img src="https://img.shields.io/badge/Release-V2.5.2-green.svg" alt="Downloads" />
+                <img src="https://img.shields.io/badge/Release-V2.5.3-green.svg" alt="Downloads" />
                 <img src="https://img.shields.io/badge/JDK-1.8+-green.svg" alt="Build Status" />
                 <img
                   src="https://img.shields.io/badge/Spring%20Cloud-Greenwich.SR3-blue.svg"
                   alt="Coverage Status"
                 />
                 <img
-                  src="https://img.shields.io/badge/Spring%20Boot-2.1.8.RELEASE-blue.svg"
+                  src="https://img.shields.io/badge/Spring%20Boot-2.1.9.RELEASE-blue.svg"
                   alt="Downloads"
                 />
                 <a href="https://bladex.vip">
@@ -103,7 +103,12 @@ class Workplace extends PureComponent {
               </Collapse>
             </Col>
             <Col span={8}>
-              <Collapse bordered={false} defaultActiveKey={['11']}>
+              <Collapse bordered={false} defaultActiveKey={['12']}>
+                <Panel header="2.5.3发布 集成分布式链路追踪" key="12">
+                  <div>1.封装集成zipkin，支持分布式链路追踪</div>
+                  <div>2.seata升级至0.9.0，解决部分分布式事务遇到的bug</div>
+                  <div>3.springboot版本升级至2.1.9</div>
+                </Panel>
                 <Panel header="2.5.2发布 增加个人中心" key="11">
                   <div>1.增加个人中心，支持用户信息自定义修改</div>
                   <div>2.增加网关鉴权配置示例</div>
