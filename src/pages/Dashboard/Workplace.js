@@ -15,7 +15,7 @@ class Workplace extends PureComponent {
           <Row gutter={24}>
             <Col span={24}>
               <div style={{ textAlign: 'center' }}>
-                <img src="https://img.shields.io/badge/Release-V2.5.3-green.svg" alt="Downloads" />
+                <img src="https://img.shields.io/badge/Release-V2.5.4-green.svg" alt="Downloads" />
                 <img src="https://img.shields.io/badge/JDK-1.8+-green.svg" alt="Build Status" />
                 <img
                   src="https://img.shields.io/badge/Spring%20Cloud-Greenwich.SR3-blue.svg"
@@ -42,7 +42,7 @@ class Workplace extends PureComponent {
           </Row>
           <Row gutter={24}>
             <Col span={16}>
-              <Collapse bordered={false} defaultActiveKey={['1','2','3']}>
+              <Collapse bordered={false} defaultActiveKey={['1','2','3','5']}>
                 <Panel header="欢迎使用Sword" key="1">
                   <div>1.Sword是SpringBlade前端UI系统</div>
                   <div>2.对现有的ant design pro库进行二次封装</div>
@@ -103,7 +103,16 @@ class Workplace extends PureComponent {
               </Collapse>
             </Col>
             <Col span={8}>
-              <Collapse bordered={false} defaultActiveKey={['12']}>
+              <Collapse bordered={false} defaultActiveKey={['13']}>
+                <Panel header="2.5.4发布 增加多数据源示例工程" key="13">
+                  <div>1.增加示例工程，增加多种常见场景的解决方案</div>
+                  <div>2.增加不同包名运行的示例</div>
+                  <div>3.增加多数据源调用运行的示例</div>
+                  <div>4.增加自定义加载Naocs配置文件的示例</div>
+                  <div>5.增加根据Nacos命名空间读取配置、注册服务的示例</div>
+                  <div>6.修复Condition类没有过滤分页字段的问题</div>
+                  <div>7.拆分CommonConstant出LauncherConstant</div>
+                </Panel>
                 <Panel header="2.5.3发布 集成分布式链路追踪" key="12">
                   <div>1.封装集成zipkin，支持分布式链路追踪</div>
                   <div>2.seata升级至0.9.0，解决部分分布式事务遇到的bug</div>
