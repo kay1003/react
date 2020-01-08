@@ -17,7 +17,7 @@ export function getAuthority(str) {
 }
 
 export function setAuthority(authority) {
-  const proAuthority = typeof authority === 'string' ? authority.split(',') : authority;
+  const proAuthority = typeof authority === 'string' ? authority.split(',') : (typeof authority === 'undefined' ? null : authority);
   return localStorage.setItem('sword-authority', JSON.stringify(proAuthority));
 }
 
