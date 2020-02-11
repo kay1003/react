@@ -14,14 +14,14 @@ class Workplace extends PureComponent {
           <Row gutter={24}>
             <Col span={24}>
               <div style={{ textAlign: 'center' }}>
-                <img src="https://img.shields.io/badge/Release-V2.6.0-green.svg" alt="Downloads" />
+                <img src="https://img.shields.io/badge/Release-V2.6.1-green.svg" alt="Downloads" />
                 <img src="https://img.shields.io/badge/JDK-1.8+-green.svg" alt="Build Status" />
                 <img
                   src="https://img.shields.io/badge/Spring%20Cloud-Hoxton.SR1-blue.svg"
                   alt="Coverage Status"
                 />
                 <img
-                  src="https://img.shields.io/badge/Spring%20Boot-2.2.2.RELEASE-blue.svg"
+                  src="https://img.shields.io/badge/Spring%20Boot-2.2.4.RELEASE-blue.svg"
                   alt="Downloads"
                 />
                 <a href="https://bladex.vip">
@@ -206,7 +206,17 @@ class Workplace extends PureComponent {
             </Row>
             <Row gutter={24}>
               <Card className={styles.card} bordered={false}>
-                <Collapse bordered={false} defaultActiveKey={['14']}>
+                <Collapse bordered={false} defaultActiveKey={['15']}>
+                  <Panel header="2.6.1发布 增加登陆验证码，支持seata1.0" key="15">
+                    <div>1.升级SpringBoot 2.2.4.RELEASE</div>
+                    <div>2.升级Alibaba Cloud 2.2.0.RELEASE</div>
+                    <div>3.升级Mybatis-Plus 3.3.1</div>
+                    <div>4.增加登陆验证码功能</div>
+                    <div>5.增加验证码对应的CaptchaTokenGranter</div>
+                    <div>6.增加RedisUtil，方便业务操作</div>
+                    <div>7.增加Condition类getQueryWrapper自定义排除参数的入口</div>
+                    <div>8.优化Seata封装，完美支持1.0.0版本</div>
+                  </Panel>
                   <Panel header="2.6.0发布 升级Hoxton.SR1 适配最新架构" key="14">
                     <div>1.升级SpringCloud Hoxton.SR1</div>
                     <div>2.升级SpringBoot 2.2.2.RELEASE</div>

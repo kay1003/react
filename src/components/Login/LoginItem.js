@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Form, Input, Button, Row, Col } from 'antd';
+import { formatMessage } from 'umi/locale';
 import omit from 'omit.js';
 import styles from './index.less';
 import ItemMap from './map';
 import LoginContext from './loginContext';
+import { getCaptchaImage } from '../../services/user';
+import { setCaptchaKey } from '../../utils/authority';
 
 const FormItem = Form.Item;
 
@@ -17,7 +20,16 @@ class WrapFormItem extends Component {
     super(props);
     this.state = {
       count: 0,
+      // 默认白色背景
+      image: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
     };
+  }
+
+  componentWillMount() {
+    const { mode, type } = this.props;
+    if (type === 'Captcha' && mode === 'image') {
+      this.refreshCaptcha();
+    }
   }
 
   componentDidMount() {
@@ -28,8 +40,20 @@ class WrapFormItem extends Component {
   }
 
   componentWillUnmount() {
+    // 清除计数器
     clearInterval(this.interval);
   }
+
+  refreshCaptcha = () => {
+    // 获取验证码
+    getCaptchaImage().then(resp => {
+      const {data} = resp;
+      if (data.key) {
+        this.setState({ image: data.image });
+        setCaptchaKey(data.key);
+      }
+    });
+  };
 
   onGetCaptcha = () => {
     const { onGetCaptcha } = this.props;
@@ -71,7 +95,7 @@ class WrapFormItem extends Component {
   };
 
   render() {
-    const { count } = this.state;
+    const { count, image } = this.state;
 
     const {
       form: { getFieldDecorator },
@@ -84,6 +108,7 @@ class WrapFormItem extends Component {
       defaultValue,
       rules,
       name,
+      mode,
       getCaptchaButtonText,
       getCaptchaSecondText,
       updateActive,
@@ -96,26 +121,52 @@ class WrapFormItem extends Component {
 
     const otherProps = restProps || {};
     if (type === 'Captcha') {
-      const inputProps = omit(otherProps, ['onGetCaptcha', 'countDown']);
-      return (
-        <FormItem>
-          <Row gutter={8}>
-            <Col span={16}>
-              {getFieldDecorator(name, options)(<Input {...customprops} {...inputProps} />)}
-            </Col>
-            <Col span={8}>
-              <Button
-                disabled={count}
-                className={styles.getCaptcha}
-                size="large"
-                onClick={this.onGetCaptcha}
-              >
-                {count ? `${count} ${getCaptchaSecondText}` : getCaptchaButtonText}
-              </Button>
-            </Col>
-          </Row>
-        </FormItem>
-      );
+      if (mode === 'mobile') {
+        const inputProps = omit(otherProps, ['onGetCaptcha', 'countDown']);
+        return (
+          <FormItem>
+            <Row gutter={8}>
+              <Col span={16}>
+                {getFieldDecorator(name, options)(<Input {...customprops} {...inputProps} />)}
+              </Col>
+              <Col span={8}>
+                <Button
+                  disabled={count}
+                  className={styles.getCaptcha}
+                  size="large"
+                  onClick={this.onGetCaptcha}
+                >
+                  {count ? `${count} ${getCaptchaSecondText}` : getCaptchaButtonText}
+                </Button>
+              </Col>
+            </Row>
+          </FormItem>
+        );
+      }
+      if (mode === 'image') {
+        return (
+          <FormItem>
+            <Row gutter={8}>
+              <Col span={16}>
+                {getFieldDecorator(name, options)(
+                  <Input
+                    {...customprops}
+                    placeholder={`${formatMessage({ id: 'validation.captcha.required' })}`}
+                  />
+                )}
+              </Col>
+              <Col span={8}>
+                <img
+                  alt="captcha"
+                  src={image}
+                  className={styles.getImgCaptcha}
+                  onClick={this.refreshCaptcha}
+                />
+              </Col>
+            </Row>
+          </FormItem>
+        );
+      }
     }
     return (
       <FormItem>

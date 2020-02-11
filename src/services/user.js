@@ -1,11 +1,19 @@
 import { stringify } from 'qs';
 import request from '../utils/request';
 import func from '../utils/Func';
+import { getCaptchaKey } from '../utils/authority';
 
 // =====================用户===========================
 
 export async function accountLogin(params) {
+  const values = params;
+  values.grantType = 'captcha';
+  values.scope = 'all';
   return request('/api/blade-auth/token', {
+    headers: {
+      'Captcha-key': getCaptchaKey(),
+      'Captcha-code': values.code,
+    },
     method: 'POST',
     body: func.toFormData(params),
   });
@@ -71,4 +79,8 @@ export async function updatePassword(params) {
     method: 'POST',
     body: func.toFormData(params),
   });
+}
+
+export async function getCaptchaImage() {
+  return request('/api/blade-auth/captcha');
 }

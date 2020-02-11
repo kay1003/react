@@ -17,7 +17,12 @@ export function getAuthority(str) {
 }
 
 export function setAuthority(authority) {
-  const proAuthority = typeof authority === 'string' ? authority.split(',') : (typeof authority === 'undefined' ? null : authority);
+  const proAuthority =
+    typeof authority === 'string'
+      ? authority.split(',')
+      : typeof authority === 'undefined'
+      ? null
+      : authority;
   return localStorage.setItem('sword-authority', JSON.stringify(proAuthority));
 }
 
@@ -63,10 +68,20 @@ export function setCurrentUser(account) {
   localStorage.setItem('sword-current-user', JSON.stringify(account));
 }
 
+export function setCaptchaKey(key) {
+  localStorage.removeItem('sword-captcha-key');
+  localStorage.setItem('sword-captcha-key', key);
+}
+
+export function getCaptchaKey() {
+  return localStorage.getItem('sword-captcha-key');
+}
+
 export function removeAll() {
   localStorage.removeItem('sword-authority');
   localStorage.removeItem('sword-token');
   localStorage.removeItem('sword-routes');
   localStorage.removeItem('sword-buttons');
   localStorage.removeItem('sword-current-user');
+  localStorage.removeItem('sword-captcha-key');
 }

@@ -6,7 +6,7 @@ import Login from '../../components/Login';
 import styles from './Login.less';
 import { tenantMode } from '../../defaultSettings';
 
-const { Tab, TenantId, UserName, Password, Submit } = Login;
+const { Tab, TenantId, UserName, Password, Captcha, Submit } = Login;
 
 @connect(({ login, loading }) => ({
   login,
@@ -117,6 +117,7 @@ class LoginPage extends Component {
               ]}
               onPressEnter={() => this.loginForm.validateFields(this.handleSubmit)}
             />
+            <Captcha name="code" mode="image" />
           </Tab>
           <div>
             <Checkbox checked={autoLogin} onChange={this.changeAutoLogin}>

@@ -24,6 +24,7 @@ export default {
   'validation.tenantId.required': '請輸入租戶編號!',
   'validation.userName.required': '請輸入賬戶!',
   'validation.password.required': '請輸入密碼！',
+  'validation.captcha.required': '請輸入驗證碼!',
   'validation.password.twice': '兩次輸入的密碼不匹配!',
   'validation.password.strength.msg': '請至少輸入 6 個字符。請不要使用容易被猜到的密碼。',
   'validation.password.strength.strong': '強度：強',

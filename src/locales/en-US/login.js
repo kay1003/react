@@ -24,6 +24,7 @@ export default {
   'validation.userName.tenantId': 'Please enter your tenantId!',
   'validation.userName.required': 'Please enter your userName!',
   'validation.password.required': 'Please enter your password!',
+  'validation.captcha.required': 'Please enter your captcha!',
   'validation.password.twice': 'The passwords entered twice do not match!',
   'validation.password.strength.msg':
     "Please enter at least 6 characters and don't use passwords that are easy to guess.",

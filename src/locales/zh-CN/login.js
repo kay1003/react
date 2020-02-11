@@ -24,6 +24,7 @@ export default {
   'validation.tenantId.required': '请输入租户ID!',
   'validation.userName.required': '请输入用户名!',
   'validation.password.required': '请输入密码！',
+  'validation.captcha.required': '请输入验证码!',
   'validation.password.twice': '两次输入的密码不匹配!',
   'validation.password.strength.msg': '请至少输入 6 个字符。请不要使用容易被猜到的密码。',
   'validation.password.strength.strong': '强度：强',
