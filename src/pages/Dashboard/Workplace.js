@@ -2,7 +2,8 @@ import React, { PureComponent } from 'react';
 import { Card, Col, Collapse, Row, Divider, Tag } from 'antd';
 import styles from '../../layouts/Sword.less';
 
-import PageHeaderWrapper from '@/components/PageHeaderWrapper';
+import PageHeaderWrapper from '../../components/PageHeaderWrapper';
+import ThirdRegister from '../../components/ThirdRegister';
 
 const { Panel } = Collapse;
 
@@ -11,6 +12,11 @@ class Workplace extends PureComponent {
     return (
       <PageHeaderWrapper>
         <Card className={styles.card} bordered={false}>
+          <Row gutter={24}>
+            <Col span={24}>
+              <ThirdRegister />
+            </Col>
+          </Row>
           <Row gutter={24}>
             <Col span={24}>
               <div style={{ textAlign: 'center' }}>
